@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>貪吃蛇遊戲</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    .score {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .score>p {
+        margin: 1rem 1rem 0;
+    }
+
+    .score>p>i {
+        font-style: normal;
+    }
+
+    .food,
+    .body,
+    .head {
+        width: 20px;
+        height: 20px;
+        background-repeat: no-repeat;
+        background-size: 20px 20px;
+        position: absolute;
+    }
+
+    .map {
+        width: 800px;
+        height: 600px;
+        border: 10px solid black;
+        margin: 30px auto;
+        background-color: rgb(48, 95, 50);
+        position: relative;
+        /*
+        background-image: url(./images/bg2.jpg);
+        background-size: 20px 20px; 
+        */
+    }
+
+    .food {
+        background-image: url(./images/food.jpg);
+    }
+
+    .head {
+        width: 20px;
+        height: 20px;
+        border: 0.2px solid white;
+        background-color: lightgreen;
+        position: absolute;
+        box-sizing: border-box;
+        /*background-image: url(./images/head.jpg); */
+    }
+
+    .body {
+        width: 20px;
+        height: 20px;
+        border: 0.2px solid white;
+        background-color: lightblue;
+        position: absolute;
+        box-sizing: border-box;
+        /*background-image: url(./images/body.jpg); */
+    }
+
+    .start {
+        width: 400px;
+        height: 50px;
+        border: 2px solid opacity;
+        margin: 10px auto;
+    }
+
+    .start>button {
+        margin-left: 50px;
+        font-size: 20px;
+    }
+
+    .rule {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+<body>
+    <div class="score">
+        <p>遊戲分數：<i class="now">0</i></p>
+        <p>最高分數：<i class="high">0</i></p>
+        <p>現在等級：<i class="level">1</i></p>
+    </div>
+    <div class="map">
+    </div>
+    <div class="start">
+        <button id="restart">重新開始</button>
+        <button id="pause">暫停</button>
+        <button id="start">開始遊戲</button>
+    </div>
+    <div class="rule">
+        <p>規則：貪吃蛇吃到一顆果實會增加 <b>100</b> 積分，每 <b>500</b> 積分提升一個等級，並且速度會加快！</p>
+    </div>
+    <script src="./貪吃蛇遊戲.js"></script>
+</body>
+
+</html>
